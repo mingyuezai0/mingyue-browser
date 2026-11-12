@@ -4,6 +4,9 @@
 
 当前发布版本为 **v1.0.1**，同时提供可运行源码、Windows x64 便携版 exe 与 Android APK；窗口使用明月自绘标题栏与窗口控制按钮。
 
+- GitHub：<https://github.com/mingyuezai0/mingyue-browser>
+- Release：<https://github.com/mingyuezai0/mingyue-browser/releases/tag/v1.0.1>
+
 ![桌面端起始页](docs/preview-home.png)
 
 ## 设计
