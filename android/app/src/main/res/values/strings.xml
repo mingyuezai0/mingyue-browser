@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">明月浏览器</string>
+    <string name="title_activity_main">明月浏览器</string>
+    <string name="package_name">com.mingyue.browser</string>
+    <string name="custom_url_scheme">com.mingyue.browser</string>
+</resources>

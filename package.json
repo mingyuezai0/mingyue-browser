@@ -1,0 +1,89 @@
+{
+  "name": "mingyue-browser",
+  "productName": "明月浏览器",
+  "version": "1.0.1",
+  "description": "明月浏览器 — 简洁、安全、可扩展的桌面浏览器",
+  "main": "./out/main/index.js",
+  "author": "Mingyue",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "keywords": [
+    "electron",
+    "browser",
+    "react",
+    "typescript",
+    "mingyue"
+  ],
+  "scripts": {
+    "dev": "node scripts/run-electron-vite.mjs dev",
+    "start": "node scripts/run-electron-vite.mjs preview",
+    "build": "electron-vite build",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
+    "dist:win": "npm run build && electron-builder --win portable --x64",
+    "dist:portable": "electron-builder --win portable --x64",
+    "mobile:sync": "npm run build && cap sync android",
+    "dist:apk": "npm run mobile:sync && powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-android.ps1"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.4.3",
+    "@capacitor/core": "^7.4.3",
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "@fontsource-variable/manrope": "^5.3.0",
+    "@ghostery/adblocker-electron": "^2.20.3",
+    "lucide-react": "^0.468.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.4.3",
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.2.0",
+    "electron": "^45.3.0",
+    "electron-builder": "^26.0.12",
+    "electron-vite": "^6.0.0",
+    "rcedit": "^4.0.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.8"
+  },
+  "allowScripts": {
+    "electron@45.3.0": true,
+    "esbuild@0.28.2": true
+  },
+  "build": {
+    "appId": "com.mingyue.browser",
+    "productName": "明月浏览器",
+    "copyright": "Copyright © 2026 此间明月在",
+    "artifactName": "Mingyue-Browser-${version}-portable.${ext}",
+    "directories": {
+      "output": "release",
+      "buildResources": "resources"
+    },
+    "files": [
+      "out/**/*",
+      "resources/**/*",
+      "package.json"
+    ],
+    "asar": true,
+    "afterPack": "scripts/after-pack.cjs",
+    "win": {
+      "icon": "resources/icon.ico",
+      "signAndEditExecutable": false,
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "portable": {
+      "requestExecutionLevel": "user"
+    }
+  }
+}
