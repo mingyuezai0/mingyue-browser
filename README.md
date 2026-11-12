@@ -169,7 +169,7 @@ npm run dist:apk
 release/Mingyue-Browser-1.0.1.apk
 ```
 
-`capacitor.config.ts` 的 `webDir` 指向 `out/renderer`；Android 工程位于 `android/`。由于项目路径包含中文，`android/gradle.properties` 已启用 `android.overridePathCheck=true`。
+`capacitor.config.ts` 的 `webDir` 指向 `out/renderer`；Android 工程位于 `android/`。由于项目路径包含中文，`android/gradle.properties` 已启用 `android.overridePathCheck=true`。Android 启动图标与启动画面由 `scripts/generate-android-icons.py` 从 `resources/icon.png` 生成，状态栏与系统导航栏使用月白纸色配色。
 
 ## 快捷键
 

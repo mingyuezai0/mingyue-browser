@@ -8479,3 +8479,7 @@ img {
 html[data-mobile-shell="true"] .window-controls {
   display: none;
 }
+
+html[data-mobile-shell="true"] .app-shell {
+  padding-top: env(safe-area-inset-top, 0px);
+}

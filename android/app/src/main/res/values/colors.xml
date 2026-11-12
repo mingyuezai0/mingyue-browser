@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#223C30</color>
+    <color name="colorPrimaryDark">#172A22</color>
+    <color name="colorAccent">#8FAE8B</color>
+    <color name="mingyue_paper">#F3EFE3</color>
+    <color name="mingyue_paper_dark">#101C17</color>
+</resources>

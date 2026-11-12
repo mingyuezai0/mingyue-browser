@@ -11,6 +11,9 @@ export function installMobileBridge(): void {
   const emptyList = async (): Promise<never[]> => []
 
   const bridge = {
+    appearance: {
+      setTheme: async (): Promise<void> => {}
+    },
     app: {
       info: async () => ({
         name: '明月浏览器',
@@ -37,6 +40,7 @@ export function installMobileBridge(): void {
       checkBreach: async () => ({ breached: false, count: 0 })
     },
     privacy: {
+      set: async (): Promise<void> => {},
       apply: async (): Promise<void> => {},
       listPermissions: emptyList,
       setPermission: async (): Promise<never[]> => [],
@@ -58,6 +62,7 @@ export function installMobileBridge(): void {
       minimize: (): void => {},
       toggleMaximize: async () => false,
       isMaximized: async () => false,
+      toggleFullscreen: async () => false,
       onMaximizeChange: () => unsubscribe,
       close: (): void => {},
       setCloseGuard: (): void => {}
